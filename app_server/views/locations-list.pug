@@ -1,63 +1,26 @@
 extends layout
+include _includes/sharedHTMLfunctions
 
 block content
   .row.banner
     .col-12
-      h1 Loc8r
-        small &nbsp;Find places to work with wifi near you!
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapline}
 
   .row
     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href="/location") Starcups
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 100mi
-          p.address 125 High Street, Salt Lake City, Utah, 84115
-            .facilities
-              span.badge.badge-warning Hot Drinks
-              span.badge.badge-warning Food
-              span.badge.badge-warning Premium wifi
-
-      .card
-        .card-block
-          h4
-            a(href="/location") Dutch Bros
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 155mi
-          p.address 155 N High Street, Salt Lake City, Utah, 84116
-            .facilities
-              span.badge.badge-warning Hot Drinks
-              span.badge.badge-warning Cold Drinks
-              span.badge.badge-warning Food
-              span.badge.badge-warning Wifi
-
-      .card
-        .card-block
-          h4
-            a(href="/location") Dutch Bros
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 190mi
-          p.address 1557 N 8440 E, Salt Lake City, Utah, 84116
-            .facilities
-              span.badge.badge-warning Hot Drinks
-              span.badge.badge-warning Food
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href="/location")= location.name
+              small &nbsp;
+                +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address= location.address
+              .facilities
+                each facility in location.facilities
+                  span.badge.badge-warning= facility
 
     .col-12.col-md-4
       p.lead Loc8r helps you find places to work when out and about. Perhaps with coffee, cake, or pint? Let Loc8r help you find the place you're looking for.
