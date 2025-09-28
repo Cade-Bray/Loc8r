@@ -4,10 +4,8 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-
 const indexRouter = require('./app_server/routes/index');
 const usersRouter = require('./app_server/routes/users');
-
 const app = express();
 
 // view engine setup
@@ -42,5 +40,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Database
+require('./app_server/models/db');
 
 module.exports = app;

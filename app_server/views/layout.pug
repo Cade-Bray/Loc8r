@@ -1,37 +1,39 @@
 doctype html
 html
 
-  head
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title= title
-    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/all.min.css')
+    head
+        title= title
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/all.min.css')
 
-  block scripts
+    block scripts
 
-  body
-    nav.navbar.fixed-top.navbar-expand-md.navbar-light
-      .container
-        a.navbar-brand(href='/') Loc8r
-        button.navbar-toggler(
-          type='button',
-          data-toggle='collapse',
-          data-target='#navbarMain'
-        )
-          span.navbar-toggler-icon
-        #navbarMain.navbar-collapse.collapse
-          ul.navbar-nav.mr-auto
-            li.nav-item
-              a.nav-link(href='/about/') About
+    body
+        nav.navbar.fixed-top.navbar-expand-md.navbar-light
+            .container
+                a.navbar-brand(href='/') Loc8r
+                button.navbar-toggler(
+                    type='button',
+                    data-toggle='collapse',
+                    data-target='#navbarMain'
+                )
+                    span.navbar-toggler-icon
 
-    .container
-      block content
+                #navbarMain.navbar-collapse.collapse
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href='/about/') About
 
-      footer
-        .row
-          .col-12
-            small &copy; Getting Mean - Simon Holmes/Clive Harber 2018
+        .container.layout-block-content
+            block content
+
+    footer.w-100
+        .container
+            .row
+                .col-12
+                    small &copy; Getting Mean - Simon Holmes/Clive Harber 2018
 
     script(
       src='https://code.jquery.com/jquery-3.3.1.slim.min.js',

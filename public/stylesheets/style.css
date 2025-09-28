@@ -1,5 +1,16 @@
 @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
 
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.container.layout-block-content {
+    flex: 1;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lobster', cursive;
 }
