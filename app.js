@@ -4,8 +4,9 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const indexRouter = require('./app_server/routes/index');
-const apiRouter = require('./app_api/routes/index');
+require('./app_api/models/db'); // Database
+const indexRouter = require('./app_server/routes/index'); //Server PUG page and html page router (Client side)
+const apiRouter = require('./app_api/routes/index'); //API router for backend integration. Needs to be after database.
 const app = express();
 
 // view engine setup
@@ -40,8 +41,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// Database
-require('./app_server/models/db');
 
 module.exports = app;
