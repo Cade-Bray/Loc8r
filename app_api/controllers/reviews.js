@@ -1,7 +1,30 @@
-function reviewsCreate() {}
+function reviewsCreate(req, res) {
+    res
+        .status(200)
+        .json({"status" : "success"});
+}
 
-function reviewsReadOne() {}
+function reviewsReadOne(req, res) {
+    res
+        .status(200)
+        .json({"status" : "success"});
+}
 
-function reviewsUpdateOne() {}
+function reviewsUpdateOne(req, res) {
+    res
+        .status(200)
+        .json({"status" : "success"});
+}
 
-function reviewsDeleteOne() {}
+function reviewsDeleteOne(req, res) {
+    res
+        .status(200)
+        .json({"status" : "success"});
+}
+
+module.exports = {
+    reviewsCreate,
+    reviewsReadOne,
+    reviewsUpdateOne,
+    reviewsDeleteOne
+}
