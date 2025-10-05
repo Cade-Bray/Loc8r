@@ -3,6 +3,19 @@ import { Map, View } from 'ol';
 import { Tile as TileLayer } from 'ol/layer';
 import { fromLonLat } from 'ol/proj';
 import OSM from 'ol/source/OSM';
+import Feature from "ol/Feature";
+import Point from "ol/geom/Point";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import Icon from 'ol/style/Icon'
+import Style from 'ol/style/Style'
+
+const markerStyle = new Style({
+    image: new Icon({
+        src: '/stylesheets/map-marker.svg',
+        anchor: [0.5, 1]
+    })
+});
 
 document.addEventListener('DOMContentLoaded', function (){
     const map = new Map({
@@ -13,10 +26,24 @@ document.addEventListener('DOMContentLoaded', function (){
             })
         ],
         view: new View({
-            center: fromLonLat([-111.8910, 40.7608]),
-            zoom: 12
+            center: fromLonLat(window.locationCoords),
+            zoom: 16
         })
     });
+    
+    const pointFeature = new Feature({
+        geometry: new Point(fromLonLat(window.locationCoords))
+    });
+    
+    pointFeature.setStyle(markerStyle)
+    
+    const vectorLayer = new VectorLayer({
+        source: new VectorSource({
+            features: [pointFeature]
+        })
+    });
+    
+    map.addLayer(vectorLayer);
 });
 
 // Function to update map view based on coordinates

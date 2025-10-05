@@ -20,8 +20,8 @@ legend {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: burlywood;
+  border-color: rosybrown;
 }
 
 .navbar-light .navbar-brand {
@@ -30,8 +30,8 @@ legend {
 }
 
 .navbar-light .navbar-toggler {
-  color: white;
-  border-color: white;
+  color: black;
+  border-color: black;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -45,24 +45,24 @@ legend {
   }
 
   .card {
-  background-color: #469ea8;
+  background-color: wheat;
   padding: 1rem;
   }
 
   .card-primary {
-  border-color: #a2ced3;
+  border-color: cornsilk;
   margin-bottom: 0.5rem;
   }
 
   .banner {
   margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
+  border-bottom: 1px solid wheat;
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
   }
 
   .review-header {
-  background-color: #31727a;
+  background-color: tan;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
@@ -75,12 +75,20 @@ legend {
   }
 
   .badge-default, .btn-primary {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: burlywood;
+  border-color: rosybrown;
+  color: black;
+      
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+      background-color: tan;
+      border-color: rosybrown;
+      color: black;
   }
 
   h4 a, h4 a:hover {
-  color: #fff;
+  color: black;
   }
 
   h4 small {
@@ -106,15 +114,15 @@ legend {
   }
 
   a {
-  color: rgba(255, 255, 255, 0.8)
+  color: black
 }
 
 a:hover {
-  color:#fff
+  color:black
 }
 
 body {
   font-family: "Cabin", Arial, sans-serif;
-  color: #fff;
-  background-color: #108a93;
+  color: black;
+  background-color: floralwhite;
 }

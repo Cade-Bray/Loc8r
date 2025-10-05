@@ -32,7 +32,7 @@ async function locationsListByDistance(req, res) {
         // Convert the meters to miles
         const conversion_unit = 0.000621371; // Multiply your meters by this to get the miles.
         for (let i = 0; i < results.length; i++) {
-            results[i].distance.calculated *= conversion_unit;
+            results[i].distance.calculated = (conversion_unit * results[i].distance.calculated).toFixed(2);
         }
         
         return res.status(200).json({results});

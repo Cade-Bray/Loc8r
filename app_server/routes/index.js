@@ -6,8 +6,11 @@ const {route} = require("express/lib/application");
 
 /* Locations pages */
 router.get('/', ctrlLocations.homelist);
-router.get('/location', ctrlLocations.locationInfo);
-router.get('/location/review/new', ctrlLocations.addReview);
+router.get('/location/:store', ctrlLocations.locationInfo);
+router
+    .route('/location/:store/review/new')
+    .get(ctrlLocations.addReview)
+    .post(ctrlLocations.doAddReview);
 
 /* Other pages */
 router.get('/about', ctrlOthers.about);
